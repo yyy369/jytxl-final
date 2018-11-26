@@ -1,0 +1,39 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>简易通讯录</title>
+<link href="<{$smarty.const.RES}>css/basic.css" rel="stylesheet" type="text/css" />
+<link href="<{$smarty.const.RES}>css/index.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body background="<{$smarty.const.RES}>images/1538202641.png">
+<div id="content">
+<h2 class="center"><{$smarty.session.user2.name}>简易通讯录</h2>
+<a href="index.php?c=User&a=logout">注销</a>
+<p class="center">总共有 个联系人，当前显示-个联系人</p>
+<{if $rslimit eq 'false'}>
+	<p>暂无任何联系人</p>
+<{else}>
+	
+   <{foreach $rslimit as $one}> 
+    
+ 
+<table class="one" width="90%" border="1" cellspacing="0" cellpadding="0">
+  <tr>
+    <td colspan="2">用户名：<{$one.name}></td>
+  </tr>
+  <tr>
+    <td width="71%">电话：<{$one.telephone}></td>
+    <td width="29%" align="center"><a href="index.php?c=Member&a=detail&id=<{$one.id}>">查看详情</a></td>
+  </tr>
+</table>
+
+<{/foreach}>
+<p class="center yema"> <{$page2}></p>
+<{/if}>
+<p class="center"><a href="index.php?c=Member&a=insert" id="xinjian">+新建联系人</a></p>
+</div>
+</body>
+</html>

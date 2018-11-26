@@ -1,0 +1,24 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>联系人信息页</title>
+<link href="<{$smarty.const.RES}>css/basic.css" rel="stylesheet" type="text/css" />
+<link href="<{$smarty.const.RES}>css/detail.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body background="<{$smarty.const.RES}>images/1538202641.png">
+<div id="content">
+<h2 class="center">联系人信息</h2>
+<ul>
+	<li>姓名：<{$rs.name}></li>
+    <li>电话：<{$rs.telephone}></li>
+    <li>地址：<{$rs.address}></li>
+    <li>Email：<{$rs.Email}></li>
+    <li>QQ：<{$rs.QQ}></li>
+</ul>
+<p class="right"><a href="index.php?c=Member&a=update&id=<{$smarty.get.id}>">修改</a> <a href="index.php?c=Member&a=del&id=<{$smarty.get.id}>" onclick="return confirm('确认删除么？')">删除</a> <a href="index.php?c=Member&a=memList" onclick="history.back()">返回</a></p>
+</div>
+</body>
+</html>
